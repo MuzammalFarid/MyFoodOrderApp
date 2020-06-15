@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="@dimen/_8sdp"
+    android:background="#F4F4F4">
+
+    <androidx.cardview.widget.CardView
+        xmlns:card_view="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/card_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#E9F8FF"
+        android:layout_gravity="center"
+        android:layout_marginTop="@dimen/_2sdp"
+        card_view:cardCornerRadius="4dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:padding="@dimen/_4sdp">
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/image_product"
+                android:layout_width="@dimen/_60sdp"
+                android:layout_height="@dimen/_60sdp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/app_icon" />
+            <com.example.myfoodorderapp.CustomFont.NativelyCustomTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Name"
+                android:textStyle="bold"
+                android:textColor="@color/app_color"
+                android:textSize="18sp"
+                android:gravity="center"
+                android:layout_marginLeft="@dimen/_5sdp"
+                android:layout_toRightOf="@+id/image_product"/>
+            <com.example.myfoodorderapp.CustomFont.NativelyCustomTextView
+                android:id="@+id/order_id"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Order Id"
+                android:textStyle="normal"
+                android:gravity="center"
+                android:textSize="18sp"
+                android:layout_marginRight="@dimen/_3sdp"
+                android:layout_alignParentRight="true"/>
+            <com.example.myfoodorderapp.CustomFont.NativelyCustomTextView
+                android:id="@+id/time_order"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Time 9:00 PM"
+                android:textStyle="normal"
+                android:textSize="18sp"
+                android:gravity="center"
+                android:layout_marginLeft="@dimen/_5sdp"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:layout_toRightOf="@+id/image_product"
+                android:layout_below="@+id/order_id"/>
+            <com.example.myfoodorderapp.CustomFont.NativelyCustomTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Total Price"
+                android:textStyle="normal"
+                android:textSize="18sp"
+                android:gravity="right"
+                android:layout_marginLeft="@dimen/_3sdp"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:layout_toRightOf="@+id/time_order"
+                android:layout_below="@+id/order_id"/>
+        </RelativeLayout>
+    </androidx.cardview.widget.CardView>
+    <com.example.myfoodorderapp.CustomFont.NativelyCustomTextView
+        android:id="@+id/order_detail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Order Detail"
+        android:padding="@dimen/_3sdp"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:textColor="@color/colorPrimary"
+        android:layout_below="@+id/card_view"/>
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/quantity_info"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/order_detail"
+        android:padding="@dimen/_5sdp"
+        android:layout_marginTop="@dimen/_2sdp"/>
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/quantity_info">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/_5sdp"
+            android:layout_marginTop="@dimen/_5sdp">
+            <com.example.myfoodorderapp.CustomFont.NativelyCustomTextView
+                android:id="@+id/call_customer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/colorAccent"
+                android:padding="@dimen/_5sdp"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:text="Order Status"/>
+            <com.example.myfoodorderapp.CustomFont.NativelyCustomTextView
+                android:id="@+id/spinner"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_8sdp"
+                android:layout_centerVertical="true"
+                android:text="Order Deliverd"
+                android:textStyle="bold"
+                android:textColor="@color/colorAccent"
+                android:layout_toRightOf="@+id/call_customer"/>
+            <com.example.myfoodorderapp.CustomFont.NativelyCustomTextView
+                android:id="@+id/view_detail"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/app_color"
+                android:padding="@dimen/_4sdp"
+                android:textSize="14sp"
+                android:layout_alignParentRight="true"
+                android:background="@drawable/border_radius"
+                android:text="View Detail"/>
+
+        </RelativeLayout>
+
+    </androidx.cardview.widget.CardView>
+</RelativeLayout>

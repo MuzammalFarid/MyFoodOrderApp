@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/app_color"
+    tools:context=".Server.SignInServer">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_margin="@dimen/_10sdp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:orientation="vertical">
+
+        <com.rengwuxian.materialedittext.MaterialEditText
+            android:id="@+id/editPhone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/phone_number"
+            android:inputType="phone"
+            android:text="03317958427"
+            android:textColor="#fff"
+            android:textColorHint="#fff"
+            app:met_baseColor="#fff"
+            app:met_floatingLabel="highlight"
+            app:met_maxCharacters="11"
+            app:met_minCharacters="11"
+            app:met_primaryColor="#fff" />
+
+        <com.rengwuxian.materialedittext.MaterialEditText
+            android:id="@+id/editPassord"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/password"
+            android:inputType="textPassword"
+            android:text="123"
+            android:textColor="#fff"
+            android:textColorHint="#fff"
+            app:met_baseColor="#fff"
+            app:met_floatingLabel="highlight"
+            app:met_minCharacters="8"
+            app:met_primaryColor="#fff" />
+
+        <com.rey.material.widget.CheckBox
+            android:id="@+id/remember_me"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:text="@string/remember_me"
+            android:textColor="#fff" />
+
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/btnSignIn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_margin="8dp"
+        android:background="@drawable/sign_in"
+        android:text="@string/sign_in"
+        android:textColor="@android:color/white"
+        tools:ignore="ButtonStyle" />
+
+</RelativeLayout>

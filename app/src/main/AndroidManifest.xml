@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.example.myfoodorderapp">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/logo"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme"
+        tools:ignore="AllowBackup,GoogleAppIndexingWarning"
+        tools:replace="android:icon">
+        <activity android:name=".SplashActivity"></activity>
+        <!--        <activity android:name=".FavoritesActivity" />-->
+        <activity android:name=".PhoneAutentication.VerifyPhoneActivity" />
+        <activity android:name=".MainActivity" />
+        <activity android:name=".TrackingOrderbyCustomer" />
+        <activity android:name=".MyOrdersActivity" />
+        <activity android:name=".OrderCompleteActivity" />
+        <activity android:name=".PaymentDetailActivity" />
+        <activity android:name=".CheckOutActivity" />
+        <activity android:name=".WelcomeActivity" />
+        <activity android:name=".SignIn" /> <!-- Facebook sdk -->
+        <meta-data
+            android:name="com.facebook.sdk.ApplicationId"
+            android:value="@string/facebook_app_id" />
+
+        <activity android:name=".PhoneAutentication.PhoneActivity" />
+        <activity android:name=".ChooseActivity" />
+        <activity android:name=".SignUp" />
+        <activity
+            android:name=".HomeActivity"
+            android:label="@string/title_activity_home"
+            android:theme="@style/AppTheme" />
+        <activity android:name=".FoodActivity" />
+        <activity android:name=".FoodDetailActivity" />
+        <activity android:name=".CartActivity" />
+        <activity android:name=".OrderStatusActivity" />
+        <activity
+            android:name=".Server.MainActivityServer"
+            tools:ignore="InnerclassSeparator" />
+        <activity android:name=".OrderSummaryActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".Server.SignInServer"
+            tools:ignore="InnerclassSeparator" />
+        <activity
+            android:name=".Server.HomeActivityServer"
+            android:label="@string/title_activity_home_server"
+            android:theme="@style/AppTheme"
+            tools:ignore="InnerclassSeparator" />
+        <activity
+            android:name=".Server.FoodActivityServer"
+            tools:ignore="InnerclassSeparator" />
+        <activity
+            android:name=".Server.OrderStatusActivityServer"
+            tools:ignore="InnerclassSeparator" />
+
+        <service
+            android:name=".Services.OrderStatusService"
+            android:enabled="true"
+            android:exported="true"
+            tools:ignore="ExportedService,InnerclassSeparator" />
+        <service
+            android:name=".Server.Services.OrderListenService"
+            android:enabled="true"
+            android:exported="true"
+            tools:ignore="ExportedService,InnerclassSeparator" />
+
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="google_maps_key" />
+
+        <activity
+            android:name=".Server.TrackingOrderActivity"
+            android:label="@string/title_activity_tracking_order"
+            tools:ignore="InnerclassSeparator" />
+
+        <provider
+            android:name="com.facebook.FacebookContentProvider"
+            android:authorities="com.facebook.app.FacebookContentProvider358682634886397"
+            android:exported="true"
+            tools:ignore="ExportedContentProvider" />
+    </application>
+
+</manifest>

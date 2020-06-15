@@ -1,0 +1,334 @@
+<resources>
+    <string name="app_name">Food Order</string>
+    <string name="slogan">No matter where you are whether you are at home, or in the office, or in the beach, we will find you and we will feed you!</string>
+    <string name="sloganServer">We transport products to our customers as quickly as ex betrays</string>
+    <string name="pie_chart">Pie Chart</string>
+    <string name="sign_in">SIGN IN</string>
+    <string name="phone_number">Phone Number</string>
+    <string name="title_activity_home">HomeActivity</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="sign_out">Sign Out</string>
+    <string name="cart">Cart</string>
+    <string name="my_name">Salman Yousaf</string>
+    <string name="menu">Menu</string>
+    <string name="image">Image</string>
+    <string name="place_order">Place Order</string>
+    <string name="_1_000">$1,000</string>
+    <string name="_12345678">12345678</string>
+    <string name="_03234380625">03234380625</string>
+    <string name="_0_00">$0.00</string>
+    <string name="walton_road">Walton Road</string>
+    <string name="shipping">shipping</string>
+    <string name="server">Server</string>
+    <string name="client">Client</string>
+    <string name="title_activity_home_server">HomeActivityServer</string>
+    <string name="upload">Upload</string>
+    <string name="select">Select</string>
+    <string name="description">Description</string>
+    <string name="price">Price</string>
+    <string name="discount">Discount</string>
+    <string name="title_activity_tracking_order">TrackingOrderActivity</string>
+    <string name="remember_me">Remember me</string>
+    <string name="food_description">Food Description</string>
+
+    <string name="facebook_app_id">358682634886397</string>
+    <string name="facebook_login_protocol_name">fb358682634886397</string>
+
+    <string name="next">NEXT</string>
+    <string name="skip">SKIP</string>
+    <string name="start">GOT IT</string>
+
+    <string name="recepit_txt">No Receipt  against this order </string>
+    <string name="close">Close</string>
+
+    <string name="action_settings">Settings</string>
+    <string name="products">PRODUCTS</string>
+    <string name="account">MY ACCOUNT</string>
+    <string name="save">SAVE</string>
+    <string name="write">WRITE</string>
+    <string name="items">Items</string>
+
+    <string name="orders">MY ORDERS</string>
+    <string name="favorites">MY FAVORITES</string>
+    <string name="help">HELP</string>
+    <string name="about">ABOUT SALLATI</string>
+    <string name="register_rl">REGISTER</string>
+    <string name="translate">TRANSLATE</string>
+    <string name="action_search">Search</string>
+    <string name="ptc">Purchase Through Card"</string>
+    <string name="on">Order Number</string>
+    <string name="incomming">INCOMING"</string>
+    <string name="outgoing">OUTGOING</string>
+    <string name="forget_password">
+         <u>FORGOT PASSWORD</u>
+    </string>
+    <string name="explore">
+         <u>EXPLORE</u>
+    </string>
+    <string name="login">
+         <b>LOG</b>IN
+    </string>
+    <string name="checkout">
+         <b>CHECK</b>OUT
+    </string>
+    <string name="proceedtopayment">
+         PROCEED TO <b>PAYMENT</b>
+    </string>
+    <string name="shoping_progress">
+         SHOPING IN PROGRESS\n <b>VIEW LIVE</b>
+    </string>
+    <string name="detail_product">
+       Select <b>Size</b> and <b>Quantity</b>
+    </string>
+    <string name="register">
+         <b>REGISTER</b> NEW ACCOUNT
+    </string>
+    <string name="create_an_account">CREATE AN ACCOUNT</string>
+    <string name="register1">REGISTER</string>
+    <string name="email">EMAIL</string>
+    <string name="name">NAME</string>
+    <string name="mobile">MOBILE</string>
+    <string name="password">PASSWORD</string>
+    <string name="confirm_password">CONFIRM PASSWORD</string>
+    <string name="Sp_gender">GENDER</string>
+    <string name="gender">GENDER</string>
+    <string name="city">CITY</string>
+    <string name="age">AGE</string>
+    <string name="please_wait">Please Wait</string>
+    <string name="sign_up">SIGN UP</string>
+    <string name="dashboard">DASHBOARD</string>
+    <string name="my_profile">MY PROFILE</string>
+    <string name="payment_method">PAYMENT METHOD</string>
+    <string name="my_comments">RATE YOUR ORDER</string>
+    <string name="feature">Featured</string>
+    <string name="report">REPORT</string>
+    <string name="product_picture_is_wrong">PRODUCT PICTURE IS WRONG</string>
+    <string name="product_description_is_wrong">PRODUCT DESCRIPTION IS WRONG</string>
+    <string name="product_price_is_wrong">PRODUCT PRICE IS WRONG</string>
+    <string name="consumption">CONSUMPTION</string>
+    <string name="shoping_balance">SHOPPING BALANCE</string>
+    <string name="add_to_cart">ADD TO CART</string>
+    <string name="add_to_list">ADD TO LIST</string>
+    <string name="report1">REPORT</string>
+    <string name="view_full">VIEW FULL</string>
+    <string name="advanced_search">ADVANCED SEARCH</string>
+    <string name="search_result">SEARCH RESULT</string>
+    <string name="cleaner">CLEANER</string>
+    <string name="service_charges">SERVICE CHARGES</string>
+    <string name="supermarket_address">FROM RESTAURANT TO YOUR ADDRESS</string>
+
+    <string name="add_another_item">ADD OTHER ITEM NOT IN OUR PRODUCT LIST</string>
+    <string name="SR"> SR</string>
+    <string name="payment">Payment</string>
+    <string name="grand_total_approx">Grand Total\nAPPROX.</string>
+    <string name="order_item">ORDER\nITEMS</string>
+    <string name="select_address">SELECT ADDRESS</string>
+    <string name="pick_time">PICK ORDER TIME</string>
+    <string name="pick_day">PICK A DAY</string>
+    <string name="live_view_shopping">Live view of shoping list</string>
+    <string name="grand_total1">Grand\ntotal</string>
+    <string name="order_details">ORDER DETAILS</string>
+
+
+    <string name="back_to"> BACK TO</string>
+    <string name="pay">PAY</string>
+    <string name="bundles">BUNDLES</string>
+    <string name="bundle">Bundle</string>
+    <string name="no_bundle_available">No Bundle Available</string>
+
+    <string name="loose_pack">LOOSE PACKS</string>
+    <string name="time_left">Time Left</string>
+    <string name="enter_amount">ENTER AMOUNT YOU WANT</string>
+    <string name="view_list_of"> VIEW LIST OF</string>
+    <string name="balance">BALANCE</string>
+    <string name="rate_your_orders">RATE YOUR ORDER</string>
+
+    <string name="order_number1">ORDER NUMBER </string>
+    <string name="current_orders">CURRENT ORDER</string>
+    <string name="order_history">ORDERS HISTORY</string>
+    <string name="scheduled_orders">SCHEDULED ORDERS</string>
+    <string name="user_profile">USER PROFILE</string>
+    <string name="male">MALE</string>
+    <string name="female">FEMALE</string>
+    <string name="villa">VILLA</string>
+    <string name="apartment">APARTMENT</string>
+    <string name="add_another_address">ADD ANOTHER ADDRESS</string>
+    <string name="not_available">Not available yet</string>
+    <string name="order_success_sub">ORDER SUCCESSFULLY SAVED</string>
+    <string name="add_card">ADD A CARD</string>
+    <string name="to"> to </string>
+    <string name="item_added_cart"> Item Added to Cart </string>
+
+    <string name="profile">PROFILE</string>
+    <string name="no_internet">No internet connection</string>
+    <string name="small">SMALL</string>
+    <string name="medium">MEDIUM</string>
+    <string name="large">LARGE</string>
+    <string name="plz_select_quantity">Please Select Quantity</string>
+    <string name="plz_enter_title">Please Enter Title</string>
+
+    <string name="no_current_order_found">No Current Order Found.</string>
+    <string name="street_no"> Street No </string>
+    <string name="view_live_shopping">  View live shopping </string>
+    <string name="view_live"> View Live </string>
+    <string name="latest"> LATEST </string>
+    <string name="overall">OVERALL </string>
+    <string name="google_maps_not_found"> Google Maps Not Found </string>
+    <string name="google_map_not_instaled"> Google Map not Instaled </string>
+    <string name="wait_gps_not"> Wait.GPS is not ready to get location </string>
+    <string name="your_gps_seems">Your GPS seems to be disabled, do you want to enable it?</string>
+    <string name="mint_to_delivered"> 20 Min to be delivered </string>
+    <string name="mint_to_assigned"> 20 min to be assigned </string>
+    <string name="create_new_favorite_list">CREATE A NEW FAVORITES LIST</string>
+    <string name="name_field_cant_empty">name field cant be empty</string>
+    <string name="callus">Call Us</string>
+    <string name="Dial_num">Dial</string>
+
+    <string name="plz_select_option">Please select the option first</string>
+    <string name="pc"> pc/s </string>
+    <string name="weight_not_available"> weight not available </string>
+    <string name="To">  To </string>
+    <string name="residence_type_cant_empty">residence type cant be empty</string>
+    <string name="recharge_balance">RECHARGE BALANCE</string>
+    <string name="enter_amount_error">Enter Amount</string>
+    <string name="enter_username">please enter username</string>
+    <string name="enter_apartment">Enter Appartment Number</string>
+    <string name="enter_building_number">Enter Building Number</string>
+    <string name="enter_street_address">Enter Street Address</string>
+    <string name="enter_city">Enter City Name</string>
+    <string name="enter_name">Enter Name</string>
+    <string name="select_date">Select Date</string>
+    <string name="enter_mobile_no">Enter Mobile Number</string>
+    <string name="enter_password">please enter password</string>
+    <string name="enter_email">Please enter email.</string>
+    <string name="sorry_your_area_not_covered">Sorry, your area is not yet covered for deliveries. Stay tuned for new updates.</string>
+    <string name="low_balance">Low Balance</string>
+    <string name="payment_error">payment error</string>
+    <string name="my_location">My Location</string>
+    <string name="add_other_item">ADD OTHER ITEM</string>
+    <string name="total_cost">total cost</string>
+    <string name="status">STATUS</string>
+    <string name="shopper_assigned">SHOPPER ASSIGNED</string>
+    <string name="create">CREATE</string>
+    <string name="thanks_for_reporting">THANKS FOR REPORTING, WE WILL CHECK THE\n CASE SHORTLY</string>
+    <string name="update">UPDATE</string>
+    <string name="password_not_matched">password not matched</string>
+    <string name="enter_old_password">Enter Old Password</string>
+    <string name="enter_new_password">Enter New Password</string>
+    <string name="confirm_new_password">Enter New Password</string>
+    <string name="remaining_balance">Remaining balance</string>
+    <string name="please_note_displaying_price">Please note we are only displaying an estimated price.Exact price will be displayed once all the groceries has been collected.</string>
+    <string name="gps_is_off">GPS is Off</string>
+    <string name="selected_location">Selected Location</string>
+    <string name="no_item_found">No Item Found</string>
+    <string name="please_check_cash">Please check cash to proceed.</string>
+    <string name="payment_successfull">Payment successful</string>
+    <string name="payment_successfull_plz_wait">Payment Successful.Please wait Auto redirecting in process</string>
+    <string name="empty_cart">Empty Cart</string>
+    <string name="order_time_not_available">This Order Time not available</string>
+    <string name="plz_select_date">Please Select Date</string>
+    <string name="plz_select_time_interval">Please Select Time Interval</string>
+    <string name="something_wrong">Some thing went wrong. please try again.</string>
+    <string name="plz_input_sometext">Please input some text...</string>
+    <string name="marker_is_added">Marker is added to the Map</string>
+    <string name="marker">Marker</string>
+    <string name="plz_check_cash_to_proceed">Please check cash to proceed.</string>
+    <string name="plz_select_another_del_time">Please select another Delivery Time Interval</string>
+    <string name="no_replacement_found">No replacement Found</string>
+    <string name="format_must_be">FORMAT MUST BE</string>
+    <string name="no_data_found">No Data Found.</string>
+    <string name="price_not_available">Price not available</string>
+    <string name="M">M:</string>
+    <string name="tap_color">TAP THE COLOR</string>
+    <string name="for_info">FOR THE INFO</string>
+    <string name="enter_email_ret">Please enter your email to retrieve password</string>
+    <string name="delay_in_delivery">Delay in  delivery</string>
+    <string name="product_is_incorrect">Product is incorrect</string>
+    <string name="product_is_incomplete">Product is incomplete</string>
+    <string name="incorrect_amount">Incorrect amounts</string>
+    <string name="damaged_product">Damaged products</string>
+    <string name="others">Others</string>
+    <string name="please_rate_your_exp">Please rate your experience</string>
+
+
+    <string name="updatelatesversion">App latest version available on play store</string>
+    <string name="updatenow">update now</string>
+
+
+    <string name="product_name">PRODUCT NAME</string>
+    <string name="category">CATEGORY</string>
+    <string name="brand_name">BRAND NAME</string>
+    <string name="quantity">QUANTITY</string>
+    <string name="size">SIZE</string>
+    <string name="item_number">ITEM NUMBER</string>
+    <string name="search">SEARCH</string>
+    <string name="pricing">PRICING</string>
+    <string name="suggeston_complaints"><![CDATA[SUGGESTON & COMPLAINTS]]></string>
+    <string name="return_amp_cancellation_policy"><![CDATA[RETURN & CANCELLATION POLICY]]></string>
+    <string name="pricing_1">PRICING</string>
+    <string name="dummy">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. Nam eget dui. Etiam rhoncus. Maecenas tempus, tellus eget condimentum rhoncus, sem quam semper libero, sit amet adipiscing sem neque sed ipsum. Nam quam nunc, blandit vel, luctus pulvinar, hendrerit id, lorem. Maecenas nec odio et ante tincidunt tempus. Donec vitae sapien ut libero venenatis faucibus. Nullam quis ante. Etiam sit amet orci eget eros faucibus tincidunt. Duis leo. Sed fringilla mauris sit amet nibh. Donec sodales sagittis magna. Sed consequat, leo eget bibendum sodales, augue velit cursus nunc</string>
+    <string name="dummy2">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Lorem ipsum dolor sit amet, consectetuer adipiscing elit.Lorem ipsum dolor sit amet, consectetuer adipiscing elit.Lorem ipsum dolor sit amet, consectetuer adipiscing elit.Lorem ipsum dolor sit amet, consectetuer adipiscing elit.Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</string>
+    <string name="dummy1">Lorem ipsum dolor sit amet, consectetuer adipiscing elit.Aenean commodo ligula eget dolor </string>
+    <string name="type_of_help">TYPE OF HELP</string>
+    <string name="subject">SUBJECT</string>
+    <string name="details">DETAILS</string>
+    <string name="send">SEND</string>
+    <string name="email1">Email</string>
+    <string name="submit">SUBMIT</string>
+    <string name="ignore">ignore</string>
+    <string name="accept_agreement">I ACCEPT THE LICENSE AGREEMENT</string>
+
+    <string name="shoping_cart">SHOPPING CART</string>
+    <string name="grand_total">GRAND TOTAL</string>
+
+    <string name="city_province">CITY/PROVINCE</string>
+    <string name="street_address">STREET ADDRESS</string>
+    <string name="street_address_label">Street Address</string>
+    <string name="resedence_type">RESIDENCE TYPE</string>
+    <string name="residence_type_label"> Residence Type </string>
+    <string name="select_day">SELECT DAY</string>
+    <string name="building_number">BUILDING NUMBER</string>
+    <string name="building_number_label"> Building No  </string>
+    <string name="apartment_number">APARTMENT NUMBER</string>
+    <string name="apartment_number_label"> Apartment No  </string>
+    <string name="villa_number">VILLA NUMBER</string>
+    <string name="other_description">OTHER DESCRIPTION</string>
+    <string name="map">Map</string>
+    <string name="_500_g">500 G</string>
+    <string name="_6_95_sr">6.95 SR</string>
+    <string name="sallati_app_n_app">Sallati App \n app</string>
+    <string name="replece_with_n_best_choice">REPLECE WITH \nBEST CHOICE</string>
+    <string name="add_note_for_n_shopper">ADD NOTE FOR SHOPPER</string>
+    <string name="remove">REMOVE</string>
+    <string name="delete">DELETE</string>
+    <string name="edit">EDIT</string>
+    <string name="add_items">ADD ITEMS</string>
+    <string name="edit1">EDIT</string>
+    <string name="copy_to_favorite">COPY TO FAVORITE</string>
+    <string name="copy_to_favorites">COPY TO FAVORITES</string>
+    <string name="delivery_address">
+        <b>DELIVERY</b> ADDRESS
+    </string>
+    <string name="payment_method1">
+        <b>PAYMENT</b> METHOD
+    </string>
+
+    <string name="unavailable_products">UNAVAILABLE PRODUCTS</string>
+    <string name="confirm_address">CONFIRM <b>ADDRESS</b></string>
+    <string name="addreminder">ORDER NOT AVAILABLE AT THIS TIME\n <b>SET ORDER REMINDER</b></string>
+    <string name="logout"><b>LOG</b>OUT</string>
+
+    <string name="total_fare">Total Fare (for all passengers)</string>
+    <string name="sar_currency"> SAR</string>
+    <string name="credit_card_number">Credit Card Number</string>
+    <string name="credit_card_expiry">Credit Card Expiry</string>
+    <string name="cvc_number">CVC Number</string>
+    <string name="cardholder_name">Card Holder Name</string>
+    <string name="pay_and_book">Pay and Book</string>
+    <string name="cutomer_all_orders">My All Orders</string>
+    <!--<string name="facebook_app_id">301719963601048</string>-->
+</resources>

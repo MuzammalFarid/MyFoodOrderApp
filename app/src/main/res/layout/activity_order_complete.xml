@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".OrderCompleteActivity">
+
+    <RelativeLayout
+        android:id="@+id/order_completed"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:padding="@dimen/_5sdp"
+        android:layout_margin="@dimen/_5sdp">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="@dimen/_5sdp"
+        android:elevation="@dimen/_5sdp"
+        app:cardUseCompatPadding="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@drawable/border_radius"
+            android:gravity="center">
+            <ImageView
+                android:layout_width="@dimen/_100sdp"
+                android:layout_height="@dimen/_100sdp"
+                android:src="@drawable/ic_order_complete"/>
+
+            <com.example.myfoodorderapp.CustomFont.NativelyCustomTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Order Completed"
+                android:layout_gravity="center"
+                android:textSize="28sp"
+                android:textStyle="bold"
+                android:textColor="@color/Black"
+                android:layout_marginTop="@dimen/_15sdp"/>
+            <com.example.myfoodorderapp.CustomFont.NativelyCustomTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/slogan"
+                android:layout_gravity="center"
+                android:textSize="16sp"
+                android:padding="@dimen/_10sdp"
+                android:textColor="@color/Gray"
+                android:layout_marginTop="@dimen/_15sdp"/>
+            <com.example.myfoodorderapp.CustomFont.NativelyCustomTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Your Oder Number"
+                android:layout_gravity="center"
+                android:textSize="22sp"
+                android:textStyle="bold"
+                android:textColor="@color/Black"
+                android:layout_marginTop="@dimen/_15sdp"/>
+            <com.example.myfoodorderapp.CustomFont.NativelyCustomTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="235467980"
+                android:layout_gravity="center"
+                android:textSize="22sp"
+                android:background="@color/app_color"
+                android:padding="@dimen/_5sdp"
+                android:textStyle="bold"
+                android:textColor="@color/white"
+                android:layout_marginTop="@dimen/_5sdp"/>
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+    </RelativeLayout>
+    <com.example.myfoodorderapp.CustomFont.NativelyCustomTextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="Thank You !"
+        android:layout_below="@+id/order_completed"
+        android:textColor="@color/app_color"
+        android:textSize="28sp"
+        android:textStyle="bold" />
+
+    <com.rey.material.widget.Button
+        android:id="@+id/my_orders"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/border_radius"
+        android:backgroundTint="@color/app_color"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="@dimen/_10sdp"
+        android:layout_marginRight="@dimen/_10sdp"
+        android:layout_marginLeft="@dimen/_10sdp"
+        android:text="Go to My Orders"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        />
+</RelativeLayout>

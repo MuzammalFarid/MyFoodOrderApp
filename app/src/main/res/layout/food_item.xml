@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:cardElevation="4dp">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:layout_margin="@dimen/_5sdp">
+
+        <com.makeramen.roundedimageview.RoundedImageView
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_150sdp"
+            android:id="@+id/food_image"
+            android:src="@drawable/cover_menu_pizza"
+            android:scaleType="fitCenter"
+            app:riv_corner_radius="10dip"
+            app:riv_border_color="#333333" />
+
+        <LinearLayout
+            android:id="@+id/product_detail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/food_image"
+            android:layout_marginStart="@dimen/_3sdp"
+            android:orientation="vertical">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="1">
+                <com.example.myfoodorderapp.CustomFont.NativelyCustomTextView
+                    android:id="@+id/food_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="4dp"
+                    android:text="Product Name"
+                    android:layout_weight=".8"
+                    android:textColor="@color/app_color"
+                    android:textSize="20sp" />
+                <ImageView
+                    android:id="@+id/cart"
+                    android:layout_width="36dp"
+                    android:layout_height="36dp"
+                    android:layout_weight=".1"
+                    android:src="@drawable/ic_shopping_cart_white_24dp"
+                    tools:ignore="ContentDescription" />
+                <ImageView
+                    android:id="@+id/favorite"
+                    android:layout_width="36dp"
+                    android:layout_height="36dp"
+                    android:layout_weight=".1"
+                    android:src="@drawable/ic_favorite_border_white_24dp"
+                    tools:ignore="ContentDescription" />
+            </LinearLayout>
+
+            <com.example.myfoodorderapp.CustomFont.NativelyCustomTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="4dp"
+                android:text="Category Type"
+                android:textColor="@android:color/black"
+                android:textSize="14sp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="@dimen/_4sdp">
+                <com.example.myfoodorderapp.CustomFont.NativelyCustomTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Rs: "
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/Black"/>
+
+                <com.example.myfoodorderapp.CustomFont.NativelyCustomTextView
+                    android:id="@+id/product_price"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="210"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/Black"/>
+                <View
+                    android:layout_width="1dp"
+                    android:layout_height="@dimen/_15sdp"
+                    android:background="@color/Black"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="@dimen/_10sdp"/>
+                <com.example.myfoodorderapp.CustomFont.NativelyCustomTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Delivery Fee:"
+                    android:textSize="18sp"
+                    android:layout_marginLeft="@dimen/_10sdp"
+                    android:textStyle="bold"
+                    android:textColor="@color/Black"/>
+                <com.example.myfoodorderapp.CustomFont.NativelyCustomTextView
+                    android:id="@+id/delivery_fee"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="100"
+                    android:textSize="18sp"
+                    android:layout_marginLeft="@dimen/_3sdp"
+                    android:textStyle="bold"
+                    android:textColor="@color/Black"/>
+
+            </LinearLayout>
+        </LinearLayout>
+
+
+
+    </RelativeLayout>
+
+</androidx.cardview.widget.CardView>
+
