@@ -1,27 +1,33 @@
 package com.example.myfoodorderapp;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.ItemTouchHelper;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.myfoodorderapp.Adapter.CartAdapter;
 import com.example.myfoodorderapp.CustomFont.NativelyCustomTextView;
 import com.example.myfoodorderapp.Database.Database;
+import com.example.myfoodorderapp.Helper.RecyclerItemTouchHelper;
 import com.example.myfoodorderapp.Interface.ItemClickListener;
+import com.example.myfoodorderapp.Interface.RecyclerItemTouchHelperListener;
 import com.example.myfoodorderapp.Model.Order;
+import com.google.android.material.snackbar.Snackbar;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Locale;
 
-public class CartActivity extends AppCompatActivity {
+public class CartActivity extends AppCompatActivity implements RecyclerItemTouchHelperListener {
 
     RecyclerView recyclerView;
     public NativelyCustomTextView textViewPrice;
@@ -29,6 +35,7 @@ public class CartActivity extends AppCompatActivity {
 
     FirebaseDatabase firebaseDatabase;
     DatabaseReference request;
+    LinearLayout activity_cart;
     CartAdapter cartAdapter;
     List<Order> orders;
 
@@ -44,6 +51,7 @@ public class CartActivity extends AppCompatActivity {
         orders = new ArrayList<>();
         textViewPrice = findViewById(R.id.order_price);
         buttonOrder = findViewById(R.id.btnPlaceOrder);
+        activity_cart = findViewById(R.id.activity_cart);
 
         buttonOrder.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -62,6 +70,10 @@ public class CartActivity extends AppCompatActivity {
         recyclerView = findViewById(R.id.recycler_cart);
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false));
+        //Swipe to delete
+        ItemTouchHelper.SimpleCallback itemTouchHelperCallback = new RecyclerItemTouchHelper(0,ItemTouchHelper.LEFT,this);
+        new ItemTouchHelper(itemTouchHelperCallback).attachToRecyclerView(recyclerView);
+
 
         loadCart();
     }
@@ -87,46 +99,51 @@ public class CartActivity extends AppCompatActivity {
         textViewPrice.setText(String.format(" $%s", total));
     }
 
-//    private void showDialog() {
-//        final AlertDialog.Builder builder = new AlertDialog.Builder(this);
-//        builder.setTitle("One more step!");
-//        builder.setMessage("Enter your Address: ");
-//        final EditText editText = new EditText(this);
-//        LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(
-//                LinearLayout.LayoutParams.MATCH_PARENT,
-//                LinearLayout.LayoutParams.WRAP_CONTENT
-//        );
-//        editText.setLayoutParams(layoutParams);
-//        builder.setView(editText);
-//        builder.setIcon(R.drawable.ic_shopping_cart_black_24dp);
-//
-//        builder.setPositiveButton("YES", new DialogInterface.OnClickListener() {
-//            @Override
-//            public void onClick(DialogInterface dialogInterface, int i) {
-//                Request req = new Request(Common.currentUser.getName(),
-//                        Common.currentUser.getPhone(),
-//                        editText.getText().toString(),
-//                        textViewPrice.getText().toString(),
-//                        "Home Delivery",
-//                        orders);
-//
-//                //sending to firebase
-//                request.child(String.valueOf(System.currentTimeMillis())).setValue(req);
-//
-//                new Database(CartActivity.this).cleanCart();
-//                Toast.makeText(CartActivity.this, "Order is placed. Thank You!", Toast.LENGTH_SHORT).show();
-//                finish();
-//            }
-//        });
-//
-//        builder.setNegativeButton("NO", new DialogInterface.OnClickListener() {
-//            @Override
-//            public void onClick(DialogInterface dialogInterface, int i) {
-//                dialogInterface.dismiss();
-//            }
-//        });
-//
-//        builder.show();
-//    }
+    @Override
+    public void onSwiped(RecyclerView.ViewHolder viewHolder, int direction, int position) {
+        if (viewHolder instanceof CartAdapter.CartViewHolder)
+        {
+            String name = ((CartAdapter)recyclerView.getAdapter()).getItem(viewHolder.getAdapterPosition()).getProductName();
+
+            final Order deleteItem = ((CartAdapter)recyclerView.getAdapter()).getItem(viewHolder.getAdapterPosition());
+
+            final int deleteIndex = viewHolder.getAdapterPosition();
+            cartAdapter.removeItem(deleteIndex);
+
+            new Database(getBaseContext()).cleanCart();
+
+            //update txttotal
+            //calculation total price
+            float total = 0;
+            List<Order> orders = new Database(getBaseContext()).getCarts();
+            for(Order item:orders)
+                total +=(Float.parseFloat(item.getPrice()))*(Integer.parseInt(item.getQuantity()));
+            Locale locale = new Locale("en","MY");
+            java.text.NumberFormat fmt = java.text.NumberFormat.getCurrencyInstance(locale);
+            textViewPrice.setText(fmt.format(total));
+
+            //snackbar
+            Snackbar snackbar = Snackbar.make(activity_cart,name + " removed from cart!", Snackbar.LENGTH_LONG);
+            snackbar.setAction("UNDO", new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    cartAdapter.restoreItem(deleteItem,deleteIndex);
+                    new Database(getBaseContext()).addToCart(deleteItem);
+
+                    //update txttotal
+                    //calculation total price
+                    float total = 0;
+                    List<Order> orders = new Database(getBaseContext()).getCarts();
+                    for(Order item:orders)
+                        total +=(Float.parseFloat(item.getPrice()))*(Integer.parseInt(item.getQuantity()));
+                    Locale locale = new Locale("en","MY");
+                    java.text.NumberFormat fmt = java.text.NumberFormat.getCurrencyInstance(locale);
+                    textViewPrice.setText(fmt.format(total));
+                }
+            });
+            snackbar.setActionTextColor(Color.RED);
+            snackbar.show();
+        }
+    }
 
 }
