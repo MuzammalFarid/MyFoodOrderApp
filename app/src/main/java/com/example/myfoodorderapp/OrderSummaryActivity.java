@@ -37,6 +37,7 @@ import com.google.android.gms.location.LocationRequest;
 import com.google.android.gms.location.LocationServices;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.iid.FirebaseInstanceId;
 import com.rey.material.widget.Button;
 
 import java.util.ArrayList;
@@ -138,6 +139,7 @@ public class OrderSummaryActivity extends AppCompatActivity  implements GoogleAp
                 android.widget.Button btnReopenId=dialogView.findViewById(R.id.btnReopenId);
                 builder.setView(dialogView);
                 final AlertDialog alertDialog = builder.create();
+                final String refreshedToken = FirebaseInstanceId.getInstance().getToken();
 
                 btnReopenId.setOnClickListener(new View.OnClickListener() {
                     @Override
@@ -148,6 +150,7 @@ public class OrderSummaryActivity extends AppCompatActivity  implements GoogleAp
                                 total_price.getText().toString(),
                                 "Cash On Delivery",
                                 String.format("%s,%s", mLastLocation.getLatitude(), mLastLocation.getLongitude()),
+                                refreshedToken,
                                 orders);
                         //sending to firebase
                         request.child(String.valueOf(System.currentTimeMillis())).setValue(req);

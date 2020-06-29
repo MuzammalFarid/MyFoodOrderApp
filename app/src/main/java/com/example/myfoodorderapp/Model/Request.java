@@ -11,10 +11,11 @@ public class Request {
     private String latLng;
     private List<Order> orders;
     private String paymentMethod;
+    private String userToken;
 
     public Request(){}
 
-    public Request(String name, String phone, String address, String total,String paymentMethod, String latLng, List<Order> orders) {
+    public Request(String name, String phone, String address, String total,String paymentMethod, String latLng, String token, List<Order> orders) {
         Name = name;
         Phone = phone;
         Address = address;
@@ -22,6 +23,7 @@ public class Request {
         Status = "0";//0 is default, 1 is shipping, 2 is shipped
         this.paymentMethod = paymentMethod;
         this.latLng = latLng;
+        this.userToken = token;
         this.orders = orders;
 
     }
@@ -88,5 +90,13 @@ public class Request {
 
     public void setStatus(String status) {
         Status = status;
+    }
+
+    public String getUserToken() {
+        return userToken;
+    }
+
+    public void setUserToken(String userToken) {
+        this.userToken = userToken;
     }
 }
