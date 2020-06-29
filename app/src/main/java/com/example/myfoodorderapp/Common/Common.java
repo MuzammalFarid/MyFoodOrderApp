@@ -7,9 +7,13 @@ import android.net.NetworkInfo;
 import com.example.myfoodorderapp.Model.Request;
 import com.example.myfoodorderapp.Model.User;
 
+import java.util.Calendar;
+import java.util.Locale;
+
 public class Common {
     public static User currentUser;
     public static Request currentRequest;
+    public static String currentKey;
     public final static String UPDATE = "Update";
     public final static String DELETE = "Delete";
     public final static String USER_PHONE = "UserPhone";
@@ -17,6 +21,7 @@ public class Common {
     public final static String USER_NAME = "UserName";
     public final static String CLIENT = "client";
     public final static String SERVER = "server";
+    public static final int PICK_IMAGE_REQUEST = 71;
 
 
     public static String getStatus(String status) {
@@ -56,5 +61,13 @@ public class Common {
             }
         }
         return false;
+    }
+    public static String getDate(long time)
+    {
+        Calendar calendar = Calendar.getInstance(Locale.ENGLISH);
+        calendar.setTimeInMillis(time);
+        StringBuilder date = new StringBuilder(android.text.format.DateFormat.format("dd-MM-yyyy HH:mm"
+                , calendar).toString());
+        return date.toString();
     }
 }

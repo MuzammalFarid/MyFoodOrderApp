@@ -3,10 +3,37 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:orientation="vertical">
 
+   <LinearLayout
+       android:layout_width="match_parent"
+       android:layout_height="@dimen/_60sdp"
+       android:orientation="horizontal"
+       android:background="@color/app_color"
+       android:weightSum="1">
+       <com.example.myfoodorderapp.CustomFont.NativelyCustomTextView
+           android:layout_width="0dp"
+           android:layout_height="wrap_content"
+           android:layout_weight=".5"
+           android:layout_gravity="center"
+           android:gravity="center_horizontal"
+           android:textColor="@color/white"
+           android:textSize="18sp"
+           android:text="Your Order has been"/>
+       <com.example.myfoodorderapp.CustomFont.NativelyCustomTextView
+           android:layout_width="0dp"
+           android:layout_height="wrap_content"
+           android:layout_weight=".5"
+           android:layout_gravity="center"
+           android:gravity="center"
+           android:textColor="@color/Black"
+           android:textSize="22sp"
+           android:textStyle="bold"
+           android:text="PLACED"/>
+   </LinearLayout>
     <lecho.lib.hellocharts.view.PieChartView
         android:id="@+id/chart"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="wrap_content" />
 </LinearLayout>

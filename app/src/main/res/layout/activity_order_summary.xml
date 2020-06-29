@@ -5,19 +5,20 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:layout_margin="@dimen/_5sdp"
+    android:padding="@dimen/_5sdp"
     tools:context=".OrderSummaryActivity">
 
     <RelativeLayout
         android:id="@+id/user_info"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:elevation="@dimen/_5sdp"
-        android:background="@color/white">
+        android:elevation="@dimen/_3sdp"
+        android:background="#E8F9FF">
 
         <ImageView
             android:id="@+id/image_product"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="@dimen/_60sdp"
+            android:layout_height="@dimen/_60sdp"
             android:layout_margin="@dimen/_5sdp"
             android:padding="@dimen/_5sdp"
             android:scaleType="centerInside"
@@ -27,7 +28,6 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"
-            android:layout_margin="@dimen/_5sdp"
             android:layout_toRightOf="@+id/image_product"
             android:orientation="vertical"
             android:padding="@dimen/_5sdp">
@@ -36,7 +36,7 @@
                 android:id="@+id/user_name"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:padding="@dimen/_5sdp"
+                android:padding="@dimen/_3sdp"
                 android:text="User Name"
                 android:textColor="@color/Black"
                 android:textSize="18sp"
@@ -64,11 +64,31 @@
         </LinearLayout>
     </RelativeLayout>
 
+    <com.example.myfoodorderapp.CustomFont.NativelyCustomTextView
+        android:id="@+id/message"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="22sp"
+        android:text="Delivery Address:"
+        android:textStyle="bold"
+        android:layout_marginTop="@dimen/_5sdp"
+        android:layout_below="@+id/user_info"
+        android:textColor="@color/Black"/>
+    <com.example.myfoodorderapp.CustomFont.NativelyCustomTextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="16sp"
+        android:id="@+id/address_details"
+        android:text="Delivery Address"
+        android:layout_marginTop="@dimen/_5sdp"
+        android:layout_below="@+id/message"
+        android:textColor="@color/Black"/>
     <View
         android:id="@+id/view_1"
         android:layout_width="match_parent"
         android:layout_height="@dimen/_1sdp"
-        android:layout_below="@+id/user_info"
+        android:layout_below="@+id/address_details"
+        android:layout_marginTop="@dimen/_5sdp"
         android:background="@color/Green" />
 
     <androidx.recyclerview.widget.RecyclerView
@@ -103,7 +123,7 @@
             android:weightSum="1">
 
             <com.example.myfoodorderapp.CustomFont.NativelyCustomTextView
-                android:id="@+id/total_price"
+
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight=".5"
@@ -113,6 +133,7 @@
                 android:textStyle="italic" />
 
             <com.example.myfoodorderapp.CustomFont.NativelyCustomTextView
+                android:id="@+id/total_price"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight=".5"
@@ -241,7 +262,7 @@
     </LinearLayout>
 
     <com.rey.material.widget.Button
-        android:id="@+id/payment_detail"
+        android:id="@+id/place_order"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
@@ -251,7 +272,7 @@
         android:background="@drawable/border_radius"
         android:backgroundTint="@color/app_color"
         android:padding="@dimen/_5sdp"
-        android:text="Continue"
+        android:text="Place order"
         android:textColor="@color/white"
         android:textStyle="bold" />
 </RelativeLayout>

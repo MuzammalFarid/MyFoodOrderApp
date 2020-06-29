@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardUseCompatPadding="true"
+    app:cardElevation="4dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_margin="16dp">
+
+
+        <com.rengwuxian.materialedittext.MaterialEditText
+            android:id="@+id/street_no"
+            android:hint="Street No"
+            app:met_clearButton="true"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColorHint="@color/colorPrimary"
+            android:textColor="@color/overlayBackground"
+            android:inputType="textCapCharacters"
+            app:met_floatingLabel="highlight"
+            app:met_floatingLabelTextColor="@color/colorPrimary"
+            app:met_primaryColor="#fff"/>
+
+        <com.rengwuxian.materialedittext.MaterialEditText
+            android:id="@+id/house_no"
+            android:hint="House NO"
+            app:met_clearButton="true"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColorHint="@color/colorPrimary"
+            android:textColor="@color/overlayBackground"
+            android:inputType="textCapSentences"
+            app:met_floatingLabel="highlight"
+            app:met_floatingLabelTextColor="@color/colorPrimary"
+            app:met_primaryColor="#fff"/>
+
+        <com.rengwuxian.materialedittext.MaterialEditText
+            android:id="@+id/area"
+            android:hint="Area / Town / Road"
+            app:met_clearButton="true"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColorHint="@color/colorPrimary"
+            android:textColor="@color/overlayBackground"
+            app:met_floatingLabel="highlight"
+            app:met_floatingLabelTextColor="@color/colorPrimary"
+            app:met_primaryColor="#fff"/>
+        <com.rengwuxian.materialedittext.MaterialEditText
+            android:id="@+id/main_point"
+            android:hint="Near Main Point of your house"
+            app:met_clearButton="true"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColorHint="@color/colorPrimary"
+            android:textColor="@color/overlayBackground"
+            app:met_floatingLabel="highlight"
+            app:met_floatingLabelTextColor="@color/colorPrimary"
+            app:met_primaryColor="#fff"/>
+</LinearLayout>
+
+</androidx.cardview.widget.CardView>

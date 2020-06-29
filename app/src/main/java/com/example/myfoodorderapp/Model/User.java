@@ -6,6 +6,7 @@ public class User {
     private String phone;
     private String address;
     private String isStaff;
+    private String images;
 
     public User(){}
 
@@ -59,5 +60,13 @@ public class User {
 
     public void setAddress(String address) {
         this.address = address;
+    }
+
+    public String getImages() {
+        return images;
+    }
+
+    public void setImages(String images) {
+        this.images = images;
     }
 }

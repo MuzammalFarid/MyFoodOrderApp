@@ -17,8 +17,15 @@
         android:theme="@style/AppTheme"
         tools:ignore="AllowBackup,GoogleAppIndexingWarning"
         tools:replace="android:icon">
-        <activity android:name=".SplashActivity"></activity>
-        <!--        <activity android:name=".FavoritesActivity" />-->
+        <activity android:name=".UserProfileActivity"></activity>
+        <activity android:name=".Server.SettingActivity" />
+        <activity android:name=".Server.AddNewCategoryActivity" />
+        <activity android:name=".Server.AdminProfileActivity" />
+        <activity android:name=".Server.Oders.CancelledOrderDetailActivity" />
+        <activity android:name=".Server.Oders.OngoingOrderDetailActivity" />
+        <activity android:name=".Server.Oders.NewOrderDetailActivity" />
+        <activity android:name=".SplashActivity" />
+        <activity android:name=".Server.Oders.CompletedOrderDetailActivity" /> <!-- <activity android:name=".FavoritesActivity" /> -->
         <activity android:name=".PhoneAutentication.VerifyPhoneActivity" />
         <activity android:name=".MainActivity" />
         <activity android:name=".TrackingOrderbyCustomer" />
@@ -33,7 +40,7 @@
             android:value="@string/facebook_app_id" />
 
         <activity android:name=".PhoneAutentication.PhoneActivity" />
-        <activity android:name=".ChooseActivity" />
+        <activity android:name=".OrderSummaryActivity" />
         <activity android:name=".SignUp" />
         <activity
             android:name=".HomeActivity"
@@ -46,7 +53,7 @@
         <activity
             android:name=".Server.MainActivityServer"
             tools:ignore="InnerclassSeparator" />
-        <activity android:name=".OrderSummaryActivity">
+        <activity android:name=".ChooseActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

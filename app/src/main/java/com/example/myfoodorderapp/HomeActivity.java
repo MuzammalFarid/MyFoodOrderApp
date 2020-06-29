@@ -262,9 +262,14 @@ public class HomeActivity extends AppCompatActivity
             Intent intent = new Intent(HomeActivity.this, MyOrdersActivity.class);
             startActivity(intent);
         }else if (id == R.id.nav_favourite){
-//            Intent intent = new Intent(HomeActivity.this, FavoritesActivity.class);
-//            startActivity(intent);
-        }else if (id == R.id.nav_sign_out) {
+            Intent intent = new Intent(HomeActivity.this, FavoritesActivity.class);
+            startActivity(intent);
+        }else if (id == R.id.nav_profile){
+            Intent profileIntent = new Intent(HomeActivity.this, UserProfileActivity.class);
+            startActivity(profileIntent);
+        }
+
+        else if (id == R.id.nav_sign_out) {
             //clearing remember me data in PaperDb
             Paper.book(CLIENT).delete(USER_PHONE);
             Paper.book(CLIENT).delete(USER_PASSWORD);

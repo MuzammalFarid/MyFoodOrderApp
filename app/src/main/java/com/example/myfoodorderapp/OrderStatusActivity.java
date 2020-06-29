@@ -24,10 +24,6 @@ import com.google.firebase.database.FirebaseDatabase;
 public class OrderStatusActivity extends AppCompatActivity {
 
     RecyclerView recyclerView;
-    TextView textViewName;
-    TextView textViewStatus;
-    TextView textViewPhone;
-    TextView textViewAddress;
 
     FirebaseDatabase firebaseDatabase;
     DatabaseReference request;
@@ -41,11 +37,6 @@ public class OrderStatusActivity extends AppCompatActivity {
         //init Firebase
         firebaseDatabase = FirebaseDatabase.getInstance();
         request = firebaseDatabase.getReference("Request");
-
-        textViewName = findViewById(R.id.order_id);
-        textViewStatus = findViewById(R.id.order_status);
-        textViewPhone = findViewById(R.id.order_phone);
-        textViewAddress = findViewById(R.id.order_address);
 
         recyclerView = findViewById(R.id.recycler_order_status);
         recyclerView.setHasFixedSize(true);

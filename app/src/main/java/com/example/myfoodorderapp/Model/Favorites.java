@@ -2,68 +2,51 @@ package com.example.myfoodorderapp.Model;
 
 public class Favorites {
 
-    private String FoodId, FoodName, FoodPrice, FoodMenuId, FoodImage, FoodDescription, UserPhone;
+    private String ProductId, ProductName, Price, ID, UserPhone, FoodImage;
 
     public Favorites(){
 
     }
 
-    public Favorites(String foodId, String foodName, String foodPrice, String foodMenuId, String foodImage, String foodDescription, String userPhone) {
-        FoodId = foodId;
-        FoodName = foodName;
-        FoodPrice = foodPrice;
-        FoodMenuId = foodMenuId;
-        FoodImage = foodImage;
-        FoodDescription = foodDescription;
+    public Favorites(String foodId, String foodName, String foodPrice, String foodMenuId, String userPhone, String FoodImages) {
+        ProductId = foodId;
+        ProductName = foodName;
+        Price = foodPrice;
+        ID = foodMenuId;
         UserPhone = userPhone;
+        FoodImage = FoodImages;
     }
 
-    public String getFoodId() {
-        return FoodId;
+    public String getProductId() {
+        return ProductId;
     }
 
-    public void setFoodId(String foodId) {
-        FoodId = foodId;
+    public void setProductId(String productId) {
+        ProductId = productId;
     }
 
-    public String getFoodName() {
-        return FoodName;
+    public String getProductName() {
+        return ProductName;
     }
 
-    public void setFoodName(String foodName) {
-        FoodName = foodName;
+    public void setProductName(String productName) {
+        ProductName = productName;
     }
 
-    public String getFoodPrice() {
-        return FoodPrice;
+    public String getPrice() {
+        return Price;
     }
 
-    public void setFoodPrice(String foodPrice) {
-        FoodPrice = foodPrice;
+    public void setPrice(String price) {
+        Price = price;
     }
 
-    public String getFoodMenuId() {
-        return FoodMenuId;
+    public String getID() {
+        return ID;
     }
 
-    public void setFoodMenuId(String foodMenuId) {
-        FoodMenuId = foodMenuId;
-    }
-
-    public String getFoodImage() {
-        return FoodImage;
-    }
-
-    public void setFoodImage(String foodImage) {
-        FoodImage = foodImage;
-    }
-
-    public String getFoodDescription() {
-        return FoodDescription;
-    }
-
-    public void setFoodDescription(String foodDescription) {
-        FoodDescription = foodDescription;
+    public void setID(String ID) {
+        this.ID = ID;
     }
 
     public String getUserPhone() {
@@ -72,6 +55,14 @@ public class Favorites {
 
     public void setUserPhone(String userPhone) {
         UserPhone = userPhone;
+    }
+
+    public String getFoodImage() {
+        return FoodImage;
+    }
+
+    public void setFoodImage(String foodImage) {
+        FoodImage = foodImage;
     }
 }
 

@@ -162,7 +162,7 @@
                         android:textStyle="bold"
                         android:visibility="gone" />
 
-                    <EditText
+                    <TextView
 
                         android:id="@+id/address_ed_txt"
                         android:layout_width="match_parent"

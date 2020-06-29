@@ -19,7 +19,6 @@ import com.example.myfoodorderapp.Common.Common;
 import com.example.myfoodorderapp.CustomFont.NativelyCustomTextView;
 import com.example.myfoodorderapp.Database.Database;
 import com.example.myfoodorderapp.Model.Order;
-import com.example.myfoodorderapp.Model.Request;
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.GooglePlayServicesUtil;
 import com.google.android.gms.common.api.GoogleApiClient;
@@ -38,13 +37,14 @@ import java.util.List;
 public class CheckOutActivity extends AppCompatActivity implements GoogleApiClient.ConnectionCallbacks,
         GoogleApiClient.OnConnectionFailedListener, LocationListener {
 
-    private Button payment_detail;
+    Button payment_detail;
     FirebaseDatabase firebaseDatabase;
     DatabaseReference request;
     List<Order> orders;
     MaterialEditText edtComment;
     NativelyCustomTextView textViewTotalCost;
     RadioButton cashOnDeliveryFood;
+    int total;
     //location
     private LocationRequest mLocationRequest;
     private GoogleApiClient mGoogleApiClient;
@@ -72,7 +72,7 @@ public class CheckOutActivity extends AppCompatActivity implements GoogleApiClie
         orders = new ArrayList<>();
 
         // fetch the price
-        int total = 0;
+        total = 0;
         orders = new Database(this).getCarts();
         for (Order order : orders) {
             total += (Integer.parseInt(order.getPrice()) * Integer.parseInt(order.getQuantity())
@@ -109,18 +109,23 @@ public class CheckOutActivity extends AppCompatActivity implements GoogleApiClie
 
                 } else if (cashOnDeliveryFood.isChecked())
                 {
-                    Request req = new Request(Common.currentUser.getName(),
-                            Common.currentUser.getPhone(),
-                            edtComment.getText().toString(),
-                            textViewTotalCost.getText().toString(),
-                            "Cash On Delivery",
-                            String.format("%s,%s",mLastLocation.getLatitude(), mLastLocation.getLongitude()),
-                            orders);
-                    //sending to firebase
-                    request.child(String.valueOf(System.currentTimeMillis())).setValue(req);
-
-                    new Database(CheckOutActivity.this).cleanCart();
-                    startActivity(new Intent(CheckOutActivity.this, OrderCompleteActivity.class));
+//                    Request req = new Request(Common.currentUser.getName(),
+//                            Common.currentUser.getPhone(),
+//                            edtComment.getText().toString(),
+//                            textViewTotalCost.getText().toString(),
+//                            "Cash On Delivery",
+//                            String.format("%s,%s",mLastLocation.getLatitude(), mLastLocation.getLongitude()),
+//                            orders);
+//                    //sending to firebase
+//                    request.child(String.valueOf(System.currentTimeMillis())).setValue(req);
+//
+//                    new Database(CheckOutActivity.this).cleanCart();
+                    Intent intentSummary = new Intent(CheckOutActivity.this, OrderSummaryActivity.class);
+                    intentSummary.putExtra("name", Common.currentUser.getName());
+                    intentSummary.putExtra("phone", Common.currentUser.getPhone());
+                    intentSummary.putExtra("address", Common.currentUser.getAddress());
+                    intentSummary.putExtra("totalcost", textViewTotalCost.getText().toString());
+                    startActivity(intentSummary);
                     finish();
 
                 }

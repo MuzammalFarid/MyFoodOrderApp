@@ -56,7 +56,8 @@ public class FoodActivity extends AppCompatActivity {
     RecyclerView recyclerViewFood;
     String categoryId;
 
-    Database database;
+    //favourites
+    Database localDB;
     CallbackManager callbackManager;
     ShareDialog shareDialog;
 
@@ -101,7 +102,8 @@ public class FoodActivity extends AppCompatActivity {
         //init firebase
         firebaseDatabase = FirebaseDatabase.getInstance();
         foods = firebaseDatabase.getReference("Food");
-        database = new Database(this);
+        //local Database
+        localDB = new Database(this);
 
          suggested = new ArrayList<>();
          materialSearchBar = findViewById(R.id.searchBar);
@@ -220,39 +222,62 @@ public class FoodActivity extends AppCompatActivity {
                 NativelyCustomTextView textViewPrice = holder.itemView.findViewById(R.id.product_price);
                 NativelyCustomTextView textViewDelivery = holder.itemView.findViewById(R.id.delivery_fee);
                 RoundedImageView imageView = holder.itemView.findViewById(R.id.food_image);
-                final ImageView imageViewFav = holder.itemView.findViewById(R.id.favorite);
 //                final ImageView imageFbShare = holder.itemView.findViewById(R.id.fb_share);
                 final ImageView imageViewCart = holder.itemView.findViewById(R.id.cart);
+                final ImageView favorite = holder.itemView.findViewById(R.id.favorite);
 
                 textViewName.setText(model.getName());
                 textViewPrice.setText(model.getPrice());
                 textViewDelivery.setText(model.getDiscount());
                 Picasso.get().load(model.getImage()).into(imageView);
 
-                if(database.isFavorite(adapter.getRef(position).getKey()))
+
+                if(localDB.isFavorite(adapter.getRef(position).getKey()))
                 {
-                    imageViewFav.setImageResource(R.drawable.ic_favorite_white_24dp);
+                    favorite.setImageResource(R.drawable.ic_favorite_white_24dp);
                 }
                 else
                 {
-                    imageViewFav.setImageResource(R.drawable.ic_favorite_border_white_24dp);
+                    favorite.setImageResource(R.drawable.ic_favorite_border_white_24dp);
                 }
 
-                imageViewFav.setOnClickListener(new View.OnClickListener() {
+                favorite.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
-                        if(database.isFavorite(adapter.getRef(position).getKey()))
+                        if(localDB.isFavorite(adapter.getRef(position).getKey()))
                         {
-                            database.removeFromFavorites(adapter.getRef(position).getKey());
-                            imageViewFav.setImageResource(R.drawable.ic_favorite_border_white_24dp);
+                            localDB.removeFromFavorites(adapter.getRef(position).getKey());
+                            favorite.setImageResource(R.drawable.ic_favorite_border_white_24dp);
                         }
                         else
                         {
-                            database.addToFavorite(adapter.getRef(position).getKey());
-                            imageViewFav.setImageResource(R.drawable.ic_favorite_white_24dp);
+                            localDB.addToFavorite(adapter.getRef(position).getKey());
+                            favorite.setImageResource(R.drawable.ic_favorite_white_24dp);
                         }
                     }
                 });
+
+//                if (localDB.isFavorite(adapter.getRef(position).getKey()))
+//                    favorite.setImageResource(R.drawable.ic_favorite_white_24dp);
+//
+//                //Add toFavourite
+//                favorite.setOnClickListener(new View.OnClickListener() {
+//                    @Override
+//                    public void onClick(View v) {
+//                        if (!localDB.isFavorite(adapter.getRef(position).getKey())) {
+//
+//                            localDB.addToFavorite(adapter.getRef(position).getKey());
+//                            favorite.setImageResource(R.drawable.ic_favorite_white_24dp);
+//                            Toast.makeText(FoodActivity.this, "" + model.getName() +
+//                                    " was added to Favourites", Toast.LENGTH_SHORT).show();
+//                        } else {
+//                            localDB.removeFromFavorites(adapter.getRef(position).getKey());
+//                            favorite.setImageResource(R.drawable.ic_favorite_border_white_24dp);
+//                            Toast.makeText(FoodActivity.this, "" + model.getName() +
+//                                    " was removed from Favourites", Toast.LENGTH_SHORT).show();
+//                        }
+//                    }
+//                });
 
                 //Quick cart
                 imageViewCart.setOnClickListener(new View.OnClickListener() {

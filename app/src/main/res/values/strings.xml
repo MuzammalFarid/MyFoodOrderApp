@@ -330,5 +330,7 @@
     <string name="cardholder_name">Card Holder Name</string>
     <string name="pay_and_book">Pay and Book</string>
     <string name="cutomer_all_orders">My All Orders</string>
+    <string name="under_line_text"><u>Upload Image</u>.
+    </string>
     <!--<string name="facebook_app_id">301719963601048</string>-->
 </resources>

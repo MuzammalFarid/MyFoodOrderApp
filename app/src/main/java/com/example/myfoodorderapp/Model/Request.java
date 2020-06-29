@@ -70,6 +70,14 @@ public class Request {
         return orders;
     }
 
+    public String getLatLng() {
+        return latLng;
+    }
+
+    public void setLatLng(String latLng) {
+        this.latLng = latLng;
+    }
+
     public void setOrders(List<Order> orders) {
         this.orders = orders;
     }

@@ -85,7 +85,19 @@ public class Database extends SQLiteAssetHelper {
         String query = String.format("DELETE FROM OrderDetail");
         sqLiteDatabase.execSQL(query);
     }
+    public boolean isFavourite(String foodId, String userPhone) {
 
+        SQLiteDatabase db = getReadableDatabase();
+        String query = String.format("SELECT * FROM favorites WHERE FoodId = '%s' and UserPhone = '%s' ;", foodId, userPhone);
+        Cursor cursor = db.rawQuery(query, null);
+        if (cursor.getCount() <= 0){
+
+            cursor.close();
+            return false;
+        }
+        cursor.close();
+        return true;
+    }
 
     public void addToFavorite(String foodId)
     {
@@ -98,8 +110,8 @@ public class Database extends SQLiteAssetHelper {
         SQLiteDatabase db = getReadableDatabase();
         SQLiteQueryBuilder qb = new SQLiteQueryBuilder();
 
-        String[] sqlSelect = {"UserPhone","FoodId", "FoodName", "FoodPrice", "FoodMenuId", "FoodImage", "FoodDescription"};
-        String sqlTable = "Favorites";
+        String[] sqlSelect = {"UserPhone","ProductId", "ProductName", "Price", "ID"};
+        String sqlTable = "favorites";
 
         qb.setTables(sqlTable);
         Cursor c = qb.query(db, sqlSelect, "UserPhone=?", new String[]{userPhone}, null, null, null);
@@ -108,13 +120,12 @@ public class Database extends SQLiteAssetHelper {
         if (c.moveToFirst()) {
             do {
                 result.add(new Favorites(
-                        c.getString(c.getColumnIndex("FoodId")),
-                        c.getString(c.getColumnIndex("FoodName")),
-                        c.getString(c.getColumnIndex("FoodPrice")),
-                        c.getString(c.getColumnIndex("FoodMenuId")),
-                        c.getString(c.getColumnIndex("FoodImage")),
-                        c.getString(c.getColumnIndex("FoodDescription")),
-                        c.getString(c.getColumnIndex("UserPhone"))
+                        c.getString(c.getColumnIndex("ProductId")),
+                        c.getString(c.getColumnIndex("ProductName")),
+                        c.getString(c.getColumnIndex("Price")),
+                        c.getString(c.getColumnIndex("ID")),
+                        c.getString(c.getColumnIndex("UserPhone")),
+                        c.getString(c.getColumnIndex("Image"))
                 ));
             } while (c.moveToNext());
         }
@@ -124,7 +135,7 @@ public class Database extends SQLiteAssetHelper {
     public void removeFromFavourites(String foodId, String userPhone) {
 
         SQLiteDatabase db = getReadableDatabase();
-        String query = String.format("DELETE FROM Favorites WHERE FoodId = '%s' and UserPhone = '%s' ;", foodId, userPhone);
+        String query = String.format("DELETE FROM favorites WHERE FoodId = '%s' and UserPhone = '%s' ;", foodId, userPhone);
         db.execSQL(query);
     }
 
@@ -132,15 +143,13 @@ public class Database extends SQLiteAssetHelper {
     public void addToFavourites(Favorites food) {
 
         SQLiteDatabase db = getReadableDatabase();
-        String query = String.format("INSERT INTO Favorites(" +
-                        "FoodId,FoodName,FoodPrice,FoodMenuId,FoodImage,FoodDescription,UserPhone)" +
-                        "VALUES('%s','%s','%s','%s','%s','%s','%s');",
-                food.getFoodId(),
-                food.getFoodName(),
-                food.getFoodPrice(),
-                food.getFoodMenuId(),
-                food.getFoodImage(),
-                food.getFoodDescription(),
+        String query = String.format("INSERT INTO favorites(" +
+                        "foodId,ProductName,Price,ID,UserPhone)" +
+                        "VALUES('%s','%s','%s','%s','%s');",
+                food.getProductId(),
+                food.getProductName(),
+                food.getPrice(),
+                food.getID(),
                 food.getUserPhone());
         db.execSQL(query);
     }
